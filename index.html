@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Prativa Thapa | Geomatics Engineer</title>
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family:'Poppins',sans-serif;
+      background:#f4f7fb;
+      color:#222;
+      line-height:1.7;
+    }
+
+    /* HEADER */
+
+    header{
+      min-height:100vh;
+      background:linear-gradient(135deg,#004d40,#0f766e,#facc15);
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      color:white;
+      padding:20px;
+    }
+
+    .hero{
+      max-width:800px;
+      animation:fadeIn 2s ease;
+    }
+
+    .hero img{
+      width:170px;
+      height:170px;
+      border-radius:50%;
+      object-fit:cover;
+      border:5px solid white;
+      margin-bottom:20px;
+      box-shadow:0 10px 25px rgba(0,0,0,0.3);
+    }
+
+    .hero h1{
+      font-size:3.5rem;
+      margin-bottom:10px;
+    }
+
+    .hero h2{
+      font-weight:300;
+      margin-bottom:20px;
+      color:#fef08a;
+    }
+
+    .hero p{
+      font-size:1.05rem;
+      margin-bottom:30px;
+    }
+
+    .btn{
+      display:inline-block;
+      padding:12px 28px;
+      background:#facc15;
+      color:#222;
+      border-radius:30px;
+      text-decoration:none;
+      font-weight:600;
+      transition:0.3s;
+    }
+
+    .btn:hover{
+      transform:translateY(-3px);
+      background:white;
+    }
+
+    /* NAVBAR */
+
+    nav{
+      position:sticky;
+      top:0;
+      background:#062c30;
+      z-index:1000;
+      box-shadow:0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    nav ul{
+      display:flex;
+      justify-content:center;
+      flex-wrap:wrap;
+      list-style:none;
+    }
+
+    nav ul li{
+      margin:12px;
+    }
+
+    nav ul li a{
+      color:white;
+      text-decoration:none;
+      font-weight:500;
+      transition:0.3s;
+    }
+
+    nav ul li a:hover{
+      color:#facc15;
+    }
+
+    /* SECTIONS */
+
+    section{
+      padding:80px 10%;
+    }
+
+    .section-title{
+      text-align:center;
+      margin-bottom:50px;
+    }
+
+    .section-title h2{
+      font-size:2.5rem;
+      color:#004d40;
+      margin-bottom:10px;
+    }
+
+    .section-title p{
+      color:#666;
+    }
+
+    /* ABOUT */
+
+    .about{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:40px;
+      align-items:center;
+    }
+
+    .about img{
+      width:100%;
+      border-radius:20px;
+      box-shadow:0 10px 25px rgba(0,0,0,0.1);
+    }
+
+    .about-text{
+      font-size:1rem;
+    }
+
+    /* SKILLS */
+
+    .skills-container{
+      display:flex;
+      flex-wrap:wrap;
+      gap:15px;
+      justify-content:center;
+    }
+
+    .skill{
+      background:white;
+      padding:15px 22px;
+      border-radius:12px;
+      box-shadow:0 4px 10px rgba(0,0,0,0.08);
+      transition:0.3s;
+      font-weight:500;
+    }
+
+    .skill:hover{
+      transform:translateY(-5px);
+      background:#facc15;
+    }
+
+    /* CARDS */
+
+    .card-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:25px;
+    }
+
+    .card{
+      background:white;
+      padding:25px;
+      border-radius:18px;
+      box-shadow:0 5px 15px rgba(0,0,0,0.08);
+      transition:0.3s;
+    }
+
+    .card:hover{
+      transform:translateY(-6px);
+    }
+
+    .card h3{
+      margin-bottom:10px;
+      color:#0f766e;
+    }
+
+    /* EXPERIENCE */
+
+    .timeline{
+      border-left:4px solid #0f766e;
+      padding-left:25px;
+    }
+
+    .timeline-item{
+      margin-bottom:25px;
+      position:relative;
+    }
+
+    .timeline-item::before{
+      content:'';
+      position:absolute;
+      left:-34px;
+      top:5px;
+      width:16px;
+      height:16px;
+      background:#facc15;
+      border-radius:50%;
+      border:3px solid #0f766e;
+    }
+
+    /* CONTACT */
+
+    .contact{
+      text-align:center;
+    }
+
+    .contact p{
+      margin:15px 0;
+      font-size:1.1rem;
+    }
+
+    .contact a{
+      color:#0f766e;
+      text-decoration:none;
+      font-weight:500;
+    }
+
+    .socials{
+      margin-top:25px;
+    }
+
+    .socials a{
+      color:white;
+      background:#0f766e;
+      width:45px;
+      height:45px;
+      display:inline-flex;
+      justify-content:center;
+      align-items:center;
+      border-radius:50%;
+      margin:8px;
+      transition:0.3s;
+      text-decoration:none;
+      font-size:1.2rem;
+    }
+
+    .socials a:hover{
+      background:#facc15;
+      color:#222;
+      transform:translateY(-4px);
+    }
+
+    /* FOOTER */
+
+    footer{
+      background:#062c30;
+      color:white;
+      text-align:center;
+      padding:20px;
+    }
+
+    /* ANIMATION */
+
+    @keyframes fadeIn{
+      from{
+        opacity:0;
+        transform:translateY(20px);
+      }
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
+
+    /* RESPONSIVE */
+
+    @media(max-width:768px){
+
+      .hero h1{
+        font-size:2.5rem;
+      }
+
+      .about{
+        grid-template-columns:1fr;
+      }
+
+      section{
+        padding:60px 7%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HERO SECTION -->
+
+  <header>
+    <div class="hero">
+      
+      <!-- Add your image path -->
+      <img src="https://via.placeholder.com/170" alt="Prativa Thapa">
+
+      <h1>Prativa Thapa</h1>
+
+      <h2>Geomatics Engineering Student | GIS & Mapping Enthusiast</h2>
+
+      <p>
+        Passionate about GIS, Cartography, OpenStreetMap, Remote Sensing,
+        Spatial Analysis, and building impactful geospatial solutions.
+      </p>
+
+      <a href="#contact" class="btn">Contact Me</a>
+    </div>
+  </header>
+
+  <!-- NAVBAR -->
+
+  <nav>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#awards">Awards</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- ABOUT -->
+
+  <section id="about">
+    <div class="section-title">
+      <h2>About Me</h2>
+      <p>Know more about me</p>
+    </div>
+
+    <div class="about">
+      <img src="https://via.placeholder.com/500x350" alt="About Image">
+
+      <div class="about-text">
+        <p>
+          I am an Undergraduate Geomatics Engineering student at Kathmandu University
+          with strong interests in GIS, surveying, mapping, photogrammetry,
+          OpenStreetMap, and spatial data visualization.
+        </p>
+
+        <br>
+
+        <p>
+          I actively contribute to humanitarian mapping and geospatial communities,
+          serving as President at KU YouthMappers and Nepal Lead at WOM Asia Navigators.
+        </p>
+
+        <br>
+
+        <p>
+          I enjoy creating geospatial solutions that support communities and sustainable development.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+
+  <section id="skills">
+    <div class="section-title">
+      <h2>Skills</h2>
+      <p>Technical and professional expertise</p>
+    </div>
+
+    <div class="skills-container">
+      <div class="skill">GIS</div>
+      <div class="skill">Cartography</div>
+      <div class="skill">Photogrammetry</div>
+      <div class="skill">Remote Sensing</div>
+      <div class="skill">Surveying</div>
+      <div class="skill">QGIS</div>
+      <div class="skill">ArcGIS</div>
+      <div class="skill">OpenStreetMap</div>
+      <div class="skill">Python</div>
+      <div class="skill">C & C++</div>
+      <div class="skill">Web Mapping</div>
+      <div class="skill">Spatial Analysis</div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+
+  <section id="education">
+    <div class="section-title">
+      <h2>Education</h2>
+      <p>Academic journey</p>
+    </div>
+
+    <div class="card-grid">
+
+      <div class="card">
+        <h3>Kathmandu University</h3>
+        <p>Bachelor in Geomatics Engineering</p>
+        <p>2022 - Present</p>
+      </div>
+
+      <div class="card">
+        <h3>Banepa NIST School of Science</h3>
+        <p>+2 Science</p>
+        <p>2019 - 2021</p>
+      </div>
+
+      <div class="card">
+        <h3>Kshitij English Boarding School</h3>
+        <p>SEE</p>
+        <p>2009 - 2019</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+
+  <section id="experience">
+    <div class="section-title">
+      <h2>Experience</h2>
+      <p>Leadership and contribution</p>
+    </div>
+
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <h3>President - KU YouthMappers</h3>
+      </div>
+
+      <div class="timeline-item">
+        <h3>Nepal Lead - WOM Asia Navigators</h3>
+      </div>
+
+      <div class="timeline-item">
+        <h3>UN Mapper Active Contributor</h3>
+      </div>
+
+      <div class="timeline-item">
+        <h3>State of the Map 2025 Speaker & Volunteer</h3>
+      </div>
+
+      <div class="timeline-item">
+        <h3>Geodata Scout - Naxa</h3>
+      </div>
+
+      <div class="timeline-item">
+        <h3>Executive Member - GES 2024/25</h3>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- AWARDS -->
+
+  <section id="awards">
+    <div class="section-title">
+      <h2>Awards</h2>
+      <p>Achievements and recognition</p>
+    </div>
+
+    <div class="card-grid">
+
+      <div class="card">
+        <h3>OSM Competition - GES 2023</h3>
+        <p>1st Position</p>
+      </div>
+
+      <div class="card">
+        <h3>OSM Competition - GES 2024</h3>
+        <p>1st Position</p>
+      </div>
+
+      <div class="card">
+        <h3>Tanzania Mapping - YouthMappers 2023</h3>
+        <p>1st Position</p>
+      </div>
+
+      <div class="card">
+        <h3>Top Quality Mapper - YLL 2025</h3>
+        <p>Mapathon Winner</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+
+  <section id="contact">
+    <div class="section-title">
+      <h2>Contact</h2>
+      <p>Let's connect</p>
+    </div>
+
+    <div class="contact">
+
+      <p>
+        <i class="fa-solid fa-phone"></i>
+        <a href="tel:9841944807">9841944807</a>
+      </p>
+
+      <p>
+        <i class="fa-solid fa-envelope"></i>
+        <a href="mailto:prativat010@gmail.com">prativat010@gmail.com</a>
+      </p>
+
+      <div class="socials">
+
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+
+        <a href="#"><i class="fab fa-github"></i></a>
+
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+
+        <a href="#"><i class="fab fa-instagram"></i></a>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer>
+    <p>
+      © 2026 Prativa Thapa | Geomatics Engineering Portfolio
+    </p>
+  </footer>
+
+</body>
+</html>
